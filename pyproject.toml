@@ -1,0 +1,16 @@
+[project]
+name = "handler"
+version = "0.1.0"
+description = "A dumb af 'AI' that doesnt use ML"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "python-aiml>=0.9.3",
+    "rich>=15.0.0",
+]
+
+[tool.handler]
+project_name = "Handler"
+version = "Handler-One"
+version_the_real_one = "0.1.0"
+nickname = "Lena"
