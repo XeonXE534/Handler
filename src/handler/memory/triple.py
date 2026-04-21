@@ -23,16 +23,16 @@ class TripleStorageThingy:
         )
         self.conn.commit()
 
-    def query_fact(self, subject, predicate):
+    def query_fact(self, subject):
         sql = """
-            SELECT onode.name 
+            SELECT onode.name, onode.name
             FROM relationships r
             JOIN nodes snode ON r.subject_id = snode.id
             JOIN nodes pnode ON r.predicate_id = pnode.id
             JOIN nodes onode ON r.object_id = onode.id
-            WHERE snode.name = ? AND pnode.name = ?
+            WHERE snode.name = ?
         """
-        self.cursor.execute(sql, (subject, predicate))
+        self.cursor.execute(sql, (subject, ))
         result = self.cursor.fetchone()
 
         return result[0] if result else "I don't know that yet :("
