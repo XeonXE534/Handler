@@ -1,0 +1,43 @@
+[intents.QUERY]
+patterns = [
+    "what(?:'s| is| are) (.+?)\\??$",
+    "tf(?:'s| is| are) (.+?)\\??$",
+    "who(?:'s| is| are) (.+?)\\??$",
+    'tell me about (.+?)\\??$',
+    'do you know (.+?)\\??$',
+    '^(\\w[\\w\\s]*)\\?+$'
+]
+
+[intents.STORE]
+patterns = [
+    'remember that (.+?) is (.+)',
+    '(?!what|who|where|when|why|how|tf)(.+?) is (?:a |an |the )?(.+)',
+    '(?!what|who|where|when|why|how|tf)(.+?) are (?:a |an |the )?(.+)'
+]
+
+[intents.GREET]
+patterns = [
+    '^(hey|hi+|hello+|sup|yo|wassup|hi)[\s!]*$'
+]
+
+[intents.NAME]
+patterns = [
+    'my name is (.+)',
+    'call me (.+)',
+    "[iI][']?\\s?m\\b (.+)",
+    'user is (.+)'
+]
+
+[intents.QUERY_REVERSE]
+patterns = [
+    'what (?:are|is) (?:a |an |the )?(.+?)\?*$',
+    'list (?:all )?(.+?)\?*$',
+    'what (?:things|stuff) (?:are|is) (.+?)\?*$',
+]
+
+[intents.QUERY_CHAIN]
+patterns = [
+    'what (?:is|are) (.+?) (?:related to|connected to|part of)\?*$',
+    'how (?:is|are) (.+?) related\?*$',
+    'trace (.+?)$',
+]
